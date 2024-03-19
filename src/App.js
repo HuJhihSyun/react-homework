@@ -1,24 +1,58 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { Layout, ConfigProvider } from 'antd';
+import NavbarComponent from './components/organisms/NavbarComponent';
+import BannerComponent from './components/organisms/BannerComponent';
+import FeatureComponent from './components/organisms/FeatureComponent';
+import WorkComponent from './components/organisms/WorkComponent';
+import StoryComponent from './components/organisms/StoryComponent';
+
+const { Header, Content, Footer } = Layout;
+
+const layoutStyle = {
+  width: '100%',
+};
+
+const headerStyle = {
+  height: 'auto',
+  paddingInline: 48,
+  backgroundColor: '#F8D57E',
+};
+
+const contentStyle = {
+  paddingInline: 48,
+  backgroundColor: '#F8F9FF',
+};
+
+const footerStyle = {
+  backgroundColor: '#F8D57E',
+};
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ConfigProvider
+    theme={{
+      token: {
+        colorPrimary: '#069379',
+        // colorBgContainer: '#f6ffed',
+      },
+    }}
+  >
+    <Layout style={layoutStyle}>
+      <Header style={headerStyle}>
+        <NavbarComponent />
+        <BannerComponent />
+      </Header>
+      <Content style={contentStyle}>
+        <FeatureComponent />
+        <WorkComponent />
+      </Content>
+      <Footer style={footerStyle}>
+        <StoryComponent />
+      </Footer>
+    </Layout>
+    </ConfigProvider>
   );
 }
 
