@@ -1,6 +1,7 @@
 // import logo from '../../logo.svg';
-import { Flex, Button, Space } from 'antd';
-import { GiftOutlined } from '@ant-design/icons';
+import { Flex, Space } from 'antd';
+import AtomicButton from '../atomics/AtomicButton';
+import { GiftOutlined, RocketOutlined } from '@ant-design/icons';
 
 const navStyle = {
   padding: '20px 0',
@@ -11,17 +12,18 @@ function Header() {
       <nav style={navStyle}>
         <Flex justify={'space-between'} align={'center'}>
           <a
+            className={'nav-logo'}
             href="https://reactjs.org"
             target="_blank" rel="noreferrer"
           >
               <GiftOutlined />
-              Learn React
+              <span>Landing</span>Page
           </a>
           <div>
             <Space size={'middle'}>
-              <Button type="link">Link Button</Button>
-              <Button ghost>Primary Button</Button>
-              <Button type="primary">Dashed Button</Button>
+              <AtomicButton type={'link'}>Contact</AtomicButton>
+              <AtomicButton type={'light'}>How it works</AtomicButton>
+              <AtomicButton type={'solid'}><RocketOutlined rotate={45}/>Get start</AtomicButton>
             </Space>
           </div>
         </Flex>

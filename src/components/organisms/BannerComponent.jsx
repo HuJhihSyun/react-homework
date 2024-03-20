@@ -1,28 +1,36 @@
 import logo from '../../logo.svg';
-import { Flex, Typography } from 'antd';
+import { Flex, Space } from 'antd';
+import AtomicButton from '../atomics/AtomicButton';
+import { RocketOutlined } from '@ant-design/icons';
 
-const { Title, Text } = Typography;
+const startFunction = () => {
+    console.log('Get start');
+}
 
-const headerStyle = {
-    maxWidth: 1280,
-    margin: 'auto',
-    lineHeight: 1,
-};
+const workFunction = () => {
+    console.log('How it works');
+}
 
 function Banner() {
-  return (
-      <header style={headerStyle}>
-        <Flex justify={'space-between'} align={'center'}>
-            <div>
-                <Title>Create Engaging<br/>Landing Pages</Title>
-                <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, accusantium neque eum nemo pariatur quo odio blanditiis unde voluptas error soluta voluptatem nostrum laboriosam vero corrupti adipisci reiciendis ea? Dolores, corporis! Harum placeat, maiores dolor recusandae accusamus beatae natus quaerat nulla deleniti quasi dolorem, nobis incidunt aperiam at ipsum delectus.</Text>
+return (
+    <header className={'header'}>
+    <Flex justify={'space-between'} align={'center'}>
+        <div>
+            <h1 className={'header-title'}>Create Engaging<br/>Landing Pages</h1>
+            <p className={'header-text'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quaerat consequuntur tenetur quasi quisquam sit in officiis neque blanditiis velit nulla quis porro? Similique ea illum modi, ex quam laborum.</p>
+            <div style={{ marginTop: '30px' }}>
+                <Space size={'middle'}>
+                    <AtomicButton type={'solid'} buttonHandler={startFunction}><RocketOutlined rotate={45}/>Get start</AtomicButton>
+                    <AtomicButton type={'outline'} buttonHandler={workFunction}>How it works</AtomicButton>
+                </Space>
             </div>
-            <div>
-                <img src={logo} className="App-logo" alt="logo" />
-            </div>
-        </Flex>
-      </header>
-  );
+        </div>
+        <div>
+            <img src={logo} className="App-logo" alt="logo" />
+        </div>
+    </Flex>
+    </header>
+);
 }
 
 export default Banner;

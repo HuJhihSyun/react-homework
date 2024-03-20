@@ -1,0 +1,90 @@
+@import './_variables.scss';
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.subtitle {
+    font-size: 2.4vw;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.atomic-button {
+    padding: 8px 32px;
+    border-radius: 8px;
+    height: auto;
+    min-width: 150px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &.solid-button {
+        background-color: $primary-color;
+        color: #fff;
+        
+        &:hover {
+            color: #fff;
+            background-color: darken($primary-color, 5%) !important;
+        }
+    }
+
+    &.light-button {
+        background-color: $secondary-color;
+        border: 1px solid $secondary-color;
+        color: $primary-color;
+        
+        &:hover {
+            background-color: $primary-color !important;
+            border: 1px solid $primary-color !important;
+            color: #fff !important;
+        }
+    }
+
+    &.outline-button {
+        background-color: #fff;
+        border: 1px solid $primary-color;
+        color: $primary-color;
+        
+        &:hover {
+            background-color: $primary-color !important;
+            border: 1px solid $primary-color !important;
+            color: #fff !important;
+        }
+    }
+
+    &.link-button {
+        color: $primary-color;
+        min-width: auto;
+        padding: 8px 16px;
+        
+        &:hover {
+            color: darken($primary-color, 5%) !important;
+        }
+    }
+}
+
+.atomic-feature {
+    width: 100%;
+
+    &-avatar {
+        background-color: $secondary-color;
+        color: $primary-color;
+        margin-right: 10px;
+    }
+
+    .ant-card-body {
+        padding: 12px;
+        
+        h4 {
+            font-weight: 500;
+        }
+    }
+}

@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
-import { Layout, ConfigProvider } from 'antd';
+import './scss/App.scss';
+import { Layout } from 'antd';
 import NavbarComponent from './components/organisms/NavbarComponent';
 import BannerComponent from './components/organisms/BannerComponent';
 import FeatureComponent from './components/organisms/FeatureComponent';
@@ -31,14 +32,6 @@ const footerStyle = {
 function App() {
   
   return (
-    <ConfigProvider
-    theme={{
-      token: {
-        colorPrimary: '#069379',
-        // colorBgContainer: '#f6ffed',
-      },
-    }}
-  >
     <Layout style={layoutStyle}>
       <Header style={headerStyle}>
         <NavbarComponent />
@@ -52,7 +45,6 @@ function App() {
         <StoryComponent />
       </Footer>
     </Layout>
-    </ConfigProvider>
   );
 }
 
