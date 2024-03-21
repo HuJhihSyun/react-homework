@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Typography, Card, Col, Row } from 'antd';
 
 const { Title, Text } = Typography;
@@ -10,36 +11,43 @@ const workStyle = {
   textAlign: 'center',
 };
 
+const cardStyle = {
+  textAlign: 'left',
+};
+
 function Work() {
+  const [petData, setPetData] = useState([])
+
+  useEffect(() => {
+    fetch('https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&has_breeds=1&api_key=live_v7y06etNUAO19MOE7UjS7XguxHGA7LREsr6LnWfFSVn3EzoLiL84hIYSt1CFAgiH')
+    .then(res => res.json())
+    .then(data => {
+        const firstThreeData = data.slice(0, 3);
+        setPetData(firstThreeData)
+    })
+  }, [])
+
   return (
-      <section style={workStyle}>
-        <Title level={3}>Discover our lastest work</Title>
+      <section className='work'>
+        <Title level={2}>Discover our lastest work</Title>
         <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam corrupti delectus totam libero sed labore dolorem quisquam debitis atque illo.</Text>
-        <Row gutter={16}>
-          <Col span={8}>
-            <Card
-              hoverable
-              cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-            >
-              <Meta title="Europe Street beat" description="www.instagram.com" />
-            </Card>
+        <Row className='work-card-section' gutter={16}>
+          {petData.map(item => (
+            <Col span={8}>
+              <Card
+                style={cardStyle}
+                bordered={false}
+                hoverable
+                className='atomic-card'
+                cover={
+                <div className='atomic-card-cover'
+                style={{height: '20vw',backgroundImage: `url(${item.url})`,
+                backgroundPosition: 'center'}}/>}>
+              
+                <Meta title={`ID:${item.id}`} description={`Width:${item.width} / Height:${item.height}`} />
+              </Card>
           </Col>
-          <Col span={8}>
-            <Card
-              hoverable
-              cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-            >
-              <Meta title="Europe Street beat" description="www.instagram.com" />
-            </Card>
-          </Col>
-          <Col span={8}>
-            <Card
-              hoverable
-              cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-            >
-              <Meta title="Europe Street beat" description="www.instagram.com" />
-            </Card>
-          </Col>
+          ))}
         </Row>
       </section>
   );

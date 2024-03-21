@@ -88,3 +88,11 @@ p {
         }
     }
 }
+
+.atomic-card {
+    overflow: hidden;
+    
+    .ant-card-cover {
+        width: 100%;
+    }
+}

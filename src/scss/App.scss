@@ -4,6 +4,7 @@
 .header {
     max-width: 1280px;
     margin: 0 auto;
+    border: 1px solid #000;
 
     &-title {
         font-size: 5vw;
@@ -12,6 +13,55 @@
 
     &-text {
         font-weight: 500;
+    }
+
+    &-image {
+        position: relative;
+        width: 100vw;
+        height: 40vw;
+        border: 1px solid #000;
+        overflow: hidden;
+
+        &-phone {
+            position: absolute;
+            width: 25vw;
+            height: 50vw;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            z-index: 10;
+        }
+
+        &-shiny1 {
+            position: absolute;
+            width: 5vw;
+            height: 5vw;
+            top: 60%;
+            right: 10%;
+            z-index: 15;
+        }
+
+        &-shiny2 {
+            position: absolute;
+            width: 3vw;
+            height: 3vw;
+            top: 20%;
+            left: 10%;
+            z-index: 15;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 35vw;
+            height: 60%;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $background-color-2;
+            border-radius: 10vw 10vw 0 0;
+            z-index: 5;
+        }
     }
 
 }
@@ -25,5 +75,78 @@
             font-weight: bold;
             margin-left: 4px;
         }
+    }
+}
+
+.feature {
+    max-width: 1280px;
+    margin: auto;
+
+    &-image {
+        position: relative;
+        width: 60vw;
+        height: 40vw;
+        border: 1px solid #000;
+
+        &-phone {
+            position: absolute;
+            width: 15vw;
+            height: 30vw;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        &-shiny1 {
+            position: absolute;
+            width: 5vw;
+            height: 5vw;
+            top: 20%;
+            left: 10%;
+            z-index: 15;
+        }
+
+        &-shiny2 {
+            position: absolute;
+            width: 4vw;
+            height: 4vw;
+            top: 60%;
+            right: 20%;
+            z-index: 15;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 25vw;
+            height: 25vw;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $background-color;
+            border-radius: 50%;
+            z-index: 5;
+        }
+    }
+}
+
+.work {
+    max-width: 1280px;
+    margin: 100px auto;
+    text-align: center;
+
+    &-card-section {
+        margin-top: 30px;
+    }
+}
+
+.story {
+    max-width: 1280px;
+    margin: 100px auto;
+    text-align: center;
+
+    &-card-section {
+        margin-top: 30px;
     }
 }
