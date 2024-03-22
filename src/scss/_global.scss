@@ -1,4 +1,5 @@
 @import './_variables.scss';
+@import './mixins.scss';
 
 body {
     margin: 0;
@@ -10,15 +11,13 @@ p {
     line-height: 1.5;
 }
 
-.subtitle {
-    font-size: 2.4vw;
-    font-weight: bold;
+.ant-typography {
     font-family: 'Roboto', sans-serif;
 }
 
 .atomic-button {
-    padding: 8px 32px;
-    border-radius: 8px;
+    padding: 10px 32px;
+    border-radius: 12px;
     height: auto;
     min-width: 150px;
     cursor: pointer;
@@ -91,8 +90,71 @@ p {
 
 .atomic-card {
     overflow: hidden;
+    margin-bottom: 20px;
     
-    .ant-card-cover {
+    .atomic-card-cover {
         width: 100%;
+        height: 20vw;
+        background-position: center center;
+        background-size: cover;
+
+        @include sm {
+            height: 50vw;
+        }
+    }
+}
+
+.mole-customer {
+    margin-bottom: 20px;
+
+    &-content {
+        .profile {
+            width: 40%;
+
+            &-avatar {
+                width: 100px;
+                height: 100px;
+            }
+
+            h5 {
+                margin-top: 10px;
+                margin-bottom: 0;
+            }
+        }
+
+        .comment {
+            width: 60%;
+            text-align: left;
+        }
+
+        @include sm {
+            flex-direction: column;
+
+            .profile {
+                width: 100%;
+                text-align: center;
+            }
+
+            .comment {
+                width: 100%;
+                text-align: center;
+
+                &-score {
+                    order: 2;
+                    .atomic-score {
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+
+                &-list {
+                    order: 1;
+                    li {
+                        list-style-type: none;
+                    }
+                }
+                
+            }
+        }
     }
 }

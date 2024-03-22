@@ -5,12 +5,6 @@ const { Title, Text } = Typography;
 
 const { Meta } = Card;
 
-const workStyle = {
-  maxWidth: 1280,
-  margin: 'auto',
-  textAlign: 'center',
-};
-
 const cardStyle = {
   textAlign: 'left',
 };
@@ -33,16 +27,17 @@ function Work() {
         <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam corrupti delectus totam libero sed labore dolorem quisquam debitis atque illo.</Text>
         <Row className='work-card-section' gutter={16}>
           {petData.map(item => (
-            <Col span={8}>
+            <Col xs={{ span: 24 }} sm={{ span: 8 }}>
               <Card
                 style={cardStyle}
                 bordered={false}
                 hoverable
                 className='atomic-card'
                 cover={
-                <div className='atomic-card-cover'
-                style={{height: '20vw',backgroundImage: `url(${item.url})`,
-                backgroundPosition: 'center'}}/>}>
+                <div
+                className='atomic-card-cover'
+                style={{backgroundImage: `url(${item.url})`}}
+                />}>
               
                 <Meta title={`ID:${item.id}`} description={`Width:${item.width} / Height:${item.height}`} />
               </Card>

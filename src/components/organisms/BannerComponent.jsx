@@ -29,8 +29,8 @@ return (
         </div>
         <div className='header-image'>
             <img src={phone} className="header-image-phone" alt="phone" />
-            <img src={shiny1} className="header-image-shiny1" alt="phone" />
-            <img src={shiny2} className="header-image-shiny2" alt="phone" />
+            <img src={shiny1} className="header-image-shiny1" alt="shiny" />
+            <img src={shiny2} className="header-image-shiny2" alt="shiny" />
         </div>
     </Flex>
     </header>

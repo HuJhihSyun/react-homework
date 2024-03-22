@@ -9,6 +9,7 @@
     &-title {
         font-size: 5vw;
         font-weight: bold;
+        line-height: 1;
     }
 
     &-text {
@@ -69,7 +70,7 @@
 .nav {
     &-logo {
         color: #000;
-        font-size: 18px;
+        font-size: 20px;
 
         span {
             font-weight: bold;
@@ -137,7 +138,7 @@
     text-align: center;
 
     &-card-section {
-        margin-top: 30px;
+        margin-top: 50px;
     }
 }
 
@@ -147,6 +148,6 @@
     text-align: center;
 
     &-card-section {
-        margin-top: 30px;
+        margin-top: 50px;
     }
 }

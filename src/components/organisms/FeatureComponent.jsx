@@ -12,9 +12,9 @@ function Feature() {
       <section className='feature'>
         <Flex justify={'space-between'} align={'center'}>
             <div className='feature-image'>
-            <img src={phone} className="feature-image-phone" alt="phone" />
-            <img src={shiny1} className="feature-image-shiny1" alt="phone" />
-            <img src={shiny2} className="feature-image-shiny2" alt="phone" />
+              <img src={phone} className="feature-image-phone" alt="phone" />
+              <img src={shiny1} className="feature-image-shiny1" alt="shiny" />
+              <img src={shiny2} className="feature-image-shiny2" alt="shiny" />
             </div>
             <div>
                 <Title level={2}>Our features</Title>

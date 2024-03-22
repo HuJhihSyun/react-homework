@@ -1,23 +1,40 @@
-import { Typography, Card, Col, Row } from 'antd';
+import { useState, useEffect } from 'react'
+import { Typography, Col, Row } from 'antd';
+import MoleCustomer from '../molecules/MoleCustomer';
 
 const { Title, Text } = Typography;
 
 function Story() {
+  const [customerData, setCustomerData] = useState([])
+
+  useEffect(() => {
+    fetch('https://randomuser.me/api/?results=2')
+    .then(res => res.json())
+    .then(data => {
+      console.log('data', data.results)
+        const firstTwoData = data.results.slice(0, 2);
+        setCustomerData(firstTwoData)
+    })
+  }, [])
+
   return (
       <section className='story'>
         <Title level={2}>Real Stories from Satisfied Customers</Title>
         <Text>Lorem ipsum dolor sit amet.</Text>
         <Row className='story-card-section' gutter={16}>
-          <Col span={12}>
-          <Card title="Card title" bordered={false}>
-            Card content
-          </Card>
-          </Col>
-          <Col span={12}>
-          <Card title="Card title" bordered={false}>
-            Card content
-          </Card>
-          </Col>
+        {customerData.map(item => (
+          <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 12 }}>
+          <MoleCustomer
+            url={item.picture.medium}
+            name={`${item.name.first} ${item.name.last}`}
+            location={item.location.state}
+            cell={item.cell}
+            email={item.email}
+            address={`${item.location.street.number} ${item.location.street.name}, ${item.location.city}, ${item.location.state}, ${item.location.country}`}
+            score={item.dob.age}
+          />
+        </Col>
+        ))}
         </Row>
       </section>
   );

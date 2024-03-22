@@ -1,4 +1,3 @@
-// import logo from '../../logo.svg';
 import { Flex, Space } from 'antd';
 import AtomicButton from '../atomics/AtomicButton';
 import { GiftOutlined, RocketOutlined } from '@ant-design/icons';
