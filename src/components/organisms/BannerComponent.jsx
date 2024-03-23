@@ -16,21 +16,21 @@ const workFunction = () => {
 function Banner() {
 return (
     <header className='header'>
-    <Flex justify={'space-between'} align={'center'}>
+    <Flex className='header-content' justify={'space-between'} align={'center'}>
         <div>
-            <h1 className='header-title'>Create Engaging<br/>Landing Pages</h1>
-            <p className='header-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quaerat consequuntur tenetur quasi quisquam sit in officiis neque blanditiis velit nulla quis porro? Similique ea illum modi, ex quam laborum.</p>
-            <div style={{ marginTop: '30px' }}>
-                <Space size={'middle'}>
+            <h1 className='header-content-title'>Create Engaging<br/>Landing Pages</h1>
+            <p className='header-content-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quaerat consequuntur tenetur quasi quisquam sit in officiis neque blanditiis velit nulla quis porro? Similique ea illum modi, ex quam laborum.</p>
+            <div className='header-content-btn-section'>
+                <Space className='header-content-btn-section-space' size={'middle'}>
                     <AtomicButton type={'solid'} buttonHandler={startFunction}><RocketOutlined rotate={45}/>Get start</AtomicButton>
                     <AtomicButton type={'outline'} buttonHandler={workFunction}>How it works</AtomicButton>
                 </Space>
             </div>
         </div>
-        <div className='header-image'>
-            <img src={phone} className="header-image-phone" alt="phone" />
-            <img src={shiny1} className="header-image-shiny1" alt="shiny" />
-            <img src={shiny2} className="header-image-shiny2" alt="shiny" />
+        <div className='header-content-image'>
+            <img src={phone} className="header-content-image-phone" alt="phone" />
+            <img src={shiny1} className="header-content-image-shiny1" alt="shiny" />
+            <img src={shiny2} className="header-content-image-shiny2" alt="shiny" />
         </div>
     </Flex>
     </header>

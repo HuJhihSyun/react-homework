@@ -1,82 +1,156 @@
 @import './_variables.scss';
 @import './_global.scss';
+@import './mixins.scss';
 
-.header {
-    max-width: 1280px;
-    margin: 0 auto;
-    border: 1px solid #000;
+.navbar {
+    padding: 20px 0;
 
-    &-title {
-        font-size: 5vw;
-        font-weight: bold;
-        line-height: 1;
-    }
-
-    &-text {
-        font-weight: 500;
-    }
-
-    &-image {
-        position: relative;
-        width: 100vw;
-        height: 40vw;
-        border: 1px solid #000;
-        overflow: hidden;
-
-        &-phone {
-            position: absolute;
-            width: 25vw;
-            height: 50vw;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -30%);
-            z-index: 10;
-        }
-
-        &-shiny1 {
-            position: absolute;
-            width: 5vw;
-            height: 5vw;
-            top: 60%;
-            right: 10%;
-            z-index: 15;
-        }
-
-        &-shiny2 {
-            position: absolute;
-            width: 3vw;
-            height: 3vw;
-            top: 20%;
-            left: 10%;
-            z-index: 15;
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            width: 35vw;
-            height: 60%;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: $background-color-2;
-            border-radius: 10vw 10vw 0 0;
-            z-index: 5;
-        }
-    }
-
-}
-
-.nav {
     &-logo {
         color: #000;
         font-size: 20px;
 
-        span {
-            font-weight: bold;
+        &:hover {
+            color: $primary-color;
+        }
+
+        @include sm {
+            font-size: 28px;
+        }
+
+        &-text {
             margin-left: 4px;
+
+            @include sm {
+                display: none;
+            }
         }
     }
+
+    .mobile-hide {
+
+        @include md {
+            display: none;
+        }
+    }
+}
+
+.header {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    &-content {
+
+        @include sm {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        &-title {
+            font-size: 5vw;
+            font-weight: bold;
+            line-height: 1;
+
+            @include sm {
+                font-size: 10vw;
+            }
+        }
+    
+        &-text {
+            font-weight: 500;
+        }
+
+        &-btn-section {
+            margin-top: 30px;
+
+            &-space {
+                @include sm {
+                    flex-direction: column;
+                    width: 100%;
+
+                    .ant-space-item {
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+    
+        &-image {
+            position: relative;
+            width: 100vw;
+            height: 40vw;
+            overflow: hidden;
+
+            @include md {
+                height: 50vw;
+            }
+
+            @include sm {
+                height: 70vw;
+            }
+    
+            &-phone {
+                position: absolute;
+                width: 25vw;
+                height: 50vw;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -30%);
+                z-index: 10;
+
+                @include sm {
+                    width: 40vw;
+                    height: 80vw;
+                }
+            }
+    
+            &-shiny1 {
+                position: absolute;
+                width: 5vw;
+                height: 5vw;
+                top: 60%;
+                right: 10%;
+                z-index: 15;
+
+                @include sm {
+                    width: 10vw;
+                    height: 10vw;
+                }
+            }
+    
+            &-shiny2 {
+                position: absolute;
+                width: 3vw;
+                height: 3vw;
+                top: 20%;
+                left: 10%;
+                z-index: 15;
+
+                @include sm {
+                    left: 15%;
+                    width: 7vw;
+                    height: 7vw;
+                }
+            }
+    
+            &::before {
+                content: '';
+                position: absolute;
+                width: 35vw;
+                height: 60%;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: $background-color-2;
+                border-radius: 10vw 10vw 0 0;
+                z-index: 5;
+
+                @include sm {
+                    width: 60vw;
+                }
+            }
+        }
+    }
+
 }
 
 .feature {
