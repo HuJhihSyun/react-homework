@@ -94,7 +94,7 @@
                 height: 50vw;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%, -30%);
+                transform: translate(-50%, 0%);
                 z-index: 10;
 
                 @include sm {
@@ -110,6 +110,7 @@
                 top: 60%;
                 right: 10%;
                 z-index: 15;
+                opacity: 0;
 
                 @include sm {
                     width: 10vw;
@@ -124,6 +125,7 @@
                 top: 20%;
                 left: 10%;
                 z-index: 15;
+                opacity: 0;
 
                 @include sm {
                     left: 15%;
@@ -156,60 +158,116 @@
 .feature {
     max-width: 1280px;
     margin: auto;
+    margin-top: 50px;
 
-    &-image {
-        position: relative;
-        width: 60vw;
-        height: 40vw;
-        border: 1px solid #000;
-
-        &-phone {
-            position: absolute;
-            width: 15vw;
-            height: 30vw;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-        }
-
-        &-shiny1 {
-            position: absolute;
-            width: 5vw;
-            height: 5vw;
-            top: 20%;
-            left: 10%;
-            z-index: 15;
-        }
-
-        &-shiny2 {
-            position: absolute;
-            width: 4vw;
-            height: 4vw;
-            top: 60%;
-            right: 20%;
-            z-index: 15;
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            width: 25vw;
-            height: 25vw;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: $background-color;
-            border-radius: 50%;
-            z-index: 5;
-        }
+    @include sm {
+        margin: 30px 0;
     }
+
+    &-content {
+        @include sm {
+            flex-direction: column;
+        }
+
+        &-image {
+            position: relative;
+            width: 60vw;
+            height: 40vw;
+
+            @include sm {
+                width: 100vw;
+                height: 100vw;
+            }
+    
+            &-phone {
+                position: absolute;
+                width: 15vw;
+                height: 30vw;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 10;
+
+                @include sm {
+                    width: 40vw;
+                    height: 80vw;
+                }
+            }
+    
+            &-shiny1 {
+                position: absolute;
+                width: 5vw;
+                height: 5vw;
+                top: 20%;
+                left: 10%;
+                z-index: 15;
+
+                @include sm {
+                    width: 10vw;
+                    height: 10vw;
+                }
+            }
+    
+            &-shiny2 {
+                position: absolute;
+                width: 4vw;
+                height: 4vw;
+                top: 60%;
+                right: 20%;
+                z-index: 15;
+
+                @include sm {
+                    width: 8vw;
+                    height: 8vw;
+                }
+            }
+    
+            &::before {
+                content: '';
+                position: absolute;
+                width: 25vw;
+                height: 25vw;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: $background-color;
+                border-radius: 50%;
+                z-index: 5;
+
+                @include sm {
+                    width: 70vw;
+                    height: 70vw;
+                }
+            }
+
+            @include sm {
+                order: 2;
+            }
+        }
+    
+        &-text {
+            &-btn-section {
+                margin-top: 30px;
+            }
+
+            @include sm {
+                order: 1;
+                text-align: center;
+            }
+        }
+
+    }
+    
 }
 
 .work {
     max-width: 1280px;
     margin: 100px auto;
     text-align: center;
+
+    @include sm {
+        margin: 50px auto;
+    }
 
     &-card-section {
         margin-top: 50px;
@@ -220,6 +278,10 @@
     max-width: 1280px;
     margin: 100px auto;
     text-align: center;
+
+    @include sm {
+        margin: 50px auto;
+    }
 
     &-card-section {
         margin-top: 50px;

@@ -7,11 +7,11 @@ function AtomicScore({ score }) {
     const stars = [];
 
     for (let i = 0; i < realScore; i++) {
-        stars.push(<StarFilled style={{ color: '#f8d57e', fontSize: '20px' }} />);
+        stars.push(<StarFilled key={i} style={{ color: '#f8d57e', fontSize: '20px' }} />);
     }
 
     for (let i = realScore; i < totalStars; i++) {
-        stars.push(<StarFilled style={{ color: '#cccccc', fontSize: '20px' }} />);
+        stars.push(<StarFilled key={i} style={{ color: '#cccccc', fontSize: '20px' }} />);
     }
 
     return (

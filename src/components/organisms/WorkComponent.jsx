@@ -5,10 +5,6 @@ const { Title, Text } = Typography;
 
 const { Meta } = Card;
 
-const cardStyle = {
-  textAlign: 'left',
-};
-
 function Work() {
   const [petData, setPetData] = useState([])
 
@@ -26,10 +22,9 @@ function Work() {
         <Title level={2}>Discover our lastest work</Title>
         <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam corrupti delectus totam libero sed labore dolorem quisquam debitis atque illo.</Text>
         <Row className='work-card-section' gutter={16}>
-          {petData.map(item => (
-            <Col xs={{ span: 24 }} sm={{ span: 8 }}>
+          {petData.map((item, index) => (
+            <Col key={index} xs={{ span: 24 }} sm={{ span: 8 }}>
               <Card
-                style={cardStyle}
                 bordered={false}
                 hoverable
                 className='atomic-card'

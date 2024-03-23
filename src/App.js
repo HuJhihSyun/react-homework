@@ -1,5 +1,3 @@
-// import logo from './logo.svg';
-import './App.css';
 import './scss/App.scss';
 import { Layout } from 'antd';
 import NavbarComponent from './components/organisms/NavbarComponent';

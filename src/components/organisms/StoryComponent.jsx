@@ -11,7 +11,6 @@ function Story() {
     fetch('https://randomuser.me/api/?results=2')
     .then(res => res.json())
     .then(data => {
-      console.log('data', data.results)
         const firstTwoData = data.results.slice(0, 2);
         setCustomerData(firstTwoData)
     })
@@ -22,8 +21,8 @@ function Story() {
         <Title level={2}>Real Stories from Satisfied Customers</Title>
         <Text>Lorem ipsum dolor sit amet.</Text>
         <Row className='story-card-section' gutter={16}>
-        {customerData.map(item => (
-          <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 12 }}>
+        {customerData.map((item, index) => (
+          <Col key={index} xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 12 }}>
           <MoleCustomer
             url={item.picture.medium}
             name={`${item.name.first} ${item.name.last}`}
