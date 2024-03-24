@@ -35,6 +35,7 @@ function Work() {
                 />}>
               
                 <Meta title={`ID:${item.id}`} description={`Width:${item.width} / Height:${item.height}`} />
+                <p className='atomic-card-bottom'>{item.id}</p>
               </Card>
           </Col>
           ))}

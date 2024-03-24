@@ -8,6 +8,7 @@ import shiny2 from '../../assets/images/shiny2.svg';
 
 import gsap from "https://esm.sh/gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const { Title, Text } = Typography;
